@@ -1,0 +1,55 @@
+/* ye line ham most of websites me commonaly use krte hai */
+*
+{
+    margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+.wrapper
+{
+    height: 100vh;
+    width: 100vw;
+     display: flex;
+
+     /* ye krne se hmara button center me a gya */
+     justify-content:center;
+     align-items:center;
+}
+#button
+{background-color: #e84949;
+    width: fit-content;
+    color: white;
+    padding: 0.8rem 2.3rem;
+    box-shadow: 4px 5px 7px 0px #0000003f;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.5s;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    
+}
+
+/* pseudo class selector iska use hame jab content ke phle kuchh likhna ho tab krte hai */
+#button::before
+{
+    content: "";
+    background-color: #1f1f1f;
+
+    /* jab kisi per kuchh overlap krna ho to */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+
+    /* means jis side se hme content lana hai */
+    transform-origin: left;
+    transition:all 1s;
+    z-index: -1;
+}
+#button:hover::before
+{
+    transform:scaleX(1);
+}
